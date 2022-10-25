@@ -1,0 +1,24 @@
+{
+  "name": "ps5-react",
+  "version": "1.0.0",
+  "description": "A simple (actually an attempt) to recreate the Playstation 5 menu interface using ReactJS",
+  "main": "index.html",
+  "repository": "git@github.com:lia-dias/ps5-react-interface-menu.git",
+  "author": "Lia Dias <liadias914@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start:dev": "concurrently \"yarn build-watch:JSX\" \"yarn build-watch:SCSS\" \"live-server dist/\"",
+    "build:JSX": "babel src/ --out-dir dist/ --presets react-app/prod",
+    "build:SCSS": "sass src/styles/:dist/styles/",
+    "build-watch:JSX": "babel --watch src/ --out-dir dist/ --presets react-app/prod",
+    "build-watch:SCSS": "sass src/styles/:dist/styles/ -w",
+    "build-watch": "concurrently \"yarn build-watch:JSX\" \"build-watch:SCSS\""
+  },
+  "dependencies": {
+    "babel-cli": "6",
+    "babel-preset-react-app": "3",
+    "concurrently": "^7.5.0",
+    "live-server": "^1.2.2",
+    "sass": "^1.55.0"
+  }
+}
